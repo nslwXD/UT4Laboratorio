@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">UT4Laboratorio</string>
+
+    <string name="titulo">Facciones de la Tierra Media</string>
+    <string name="descripcion">Selecciona una facción para reclamar el poder del Anillo</string>
+
+</resources>

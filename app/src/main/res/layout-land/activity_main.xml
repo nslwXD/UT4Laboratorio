@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- android:scaleType="fitCenter" escala la imagen completa para que quepa perfectamente -->
+
+    <!-- CAMBIO: NUEVA LÍNEA GUÍA VERTICAL AL 50% PARA DIVIDIR LA PANTALLA EN DOS COLUMNAS -->
+    <androidx.constraintlayout.widget.Guideline
+    android:id="@+id/guideline_vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_circular"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guideline_vertical">
+
+        <ImageView
+            android:id="@+id/anillo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/anillo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/Rohan"
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:scaleType="fitCenter"
+            android:text="Rohan"
+            android:src="@drawable/rohan"
+            app:layout_constraintCircle="@+id/anillo"
+            app:layout_constraintCircleAngle="120"
+            app:layout_constraintCircleRadius="140dp"
+            tools:ignore="MissingConstraints" />
+
+        <ImageButton
+            android:id="@+id/Gondor"
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:scaleType="fitCenter"
+            android:text="Gondor"
+            android:src="@drawable/gondor"
+            app:layout_constraintCircle="@+id/anillo"
+            app:layout_constraintCircleAngle="240"
+            app:layout_constraintCircleRadius="140dp"
+            tools:ignore="MissingConstraints" />
+
+        <ImageButton
+            android:id="@+id/Mordor"
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:scaleType="fitCenter"
+            android:text="Mordor"
+            android:src="@drawable/mordor"
+            app:layout_constraintCircle="@+id/anillo"
+            app:layout_constraintCircleAngle="360"
+            app:layout_constraintCircleRadius="140dp"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/container_info"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" >
+
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="match_parent"
+            android:layout_height="104dp"
+            android:layout_margin="16dp"
+            android:gravity="center"
+            android:text="@string/titulo"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/container_circular"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+        <TextView
+            android:id="@+id/descripcion"
+            android:layout_width="match_parent"
+            android:layout_height="89dp"
+            android:gravity="center"
+            android:text="@string/descripcion"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/container_circular" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

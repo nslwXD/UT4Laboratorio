@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">UT4Laboratorio</string>
+    <string name="titulo">Factions of the Middle Earth</string>
+
+    <string name="descripcion">Select a faction to claim the power of the Ring</string>
+</resources>
